@@ -6,9 +6,7 @@
   "main": "index.js",
   "files": [
     "README.md",
-    "android",
     "index.js",
-    "ios",
     "react-native-keypair-lib.podspec",
     "zencode",
     "props"
@@ -18,17 +16,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/github_account/react-native-keypair-lib.git",
-    "baseUrl": "https://github.com/github_account/react-native-keypair-lib"
+    "url": "git+https://github.com/pasfranc/react-native-keypair-lib.git",
+    "baseUrl": "https://github.com/pasfranc/react-native-keypair-lib"
   },
   "keywords": [
-    "react-native"
+    "react-native", "keypair", "keypair recovery", "recovery questions", "zencode", "zenroom"
   ],
   "author": {
-    "name": "Your Name",
-    "email": "yourname@email.com"
+    "name": "Pasquale Pio Frncavilla",
+    "email": "pasfranc@gmail.com"
   },
-  "license": "MIT",
+  "license": "ISC",
   "licenseFilename": "LICENSE",
   "readmeFilename": "README.md",
   "peerDependencies": {

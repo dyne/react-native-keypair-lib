@@ -28,7 +28,7 @@ const ReactNativeKeypairLib = {
           }
           return answers;
     },
-    recoveryKeypair: function(answers, PBKDF, username){
+    recoveryKeypair: async function(answers, PBKDF, username){
         const CLIENT_SIDE_CONTRACT = readStringFromFile(
             DEFAULT_CLIENT_SIDE_CONTRACT
           );
@@ -47,17 +47,17 @@ const ReactNativeKeypairLib = {
         
           return JSON.parse(execution.result);
     },
-    verifyAnswers: function(answers, PBKDF, username, userPublicKey){
+    verifyAnswers: async function(answers, PBKDF, username, userPublicKey){
         const execution = await recoveryKeypair(answers, PBKDF, username);
         return userPublicKey === execution[username].keypair.public_key;
     }
 }
 
-const readJSONFromFile = (filePath, defaultFilePath) => {
+const readJSONFromFile = async function (filePath, defaultFilePath) {
     return JSON.parse(readStringFromFile(filePath, defaultFilePath));
 };
   
-const readStringFromFile = (filePath, defaultFilePath) => {
+const readStringFromFile = async function (filePath, defaultFilePath) {
     try {
         const file = await RNFS.readFile(filePath);
         return file.toString();

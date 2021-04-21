@@ -2,7 +2,7 @@
 const REGULAR_EXPRESSION = /\W/gi;
 const EMPTY_STRING  = "";
 const DEFAULT_USER  = "user";
-
+var zenroom = require("zenroom");
 const ReactNativeKeypairLib = {
     sanitizeAnswers: function(answers){
         for (const key in answers) {
@@ -22,12 +22,10 @@ const ReactNativeKeypairLib = {
             key_derivation: PBKDF,
           };
           const data  = {};
-        
-          const execution = await zencode_exec(clientSideContractText, {
+          const execution = await zenroom.zencode_exec(clientSideContractText, {
             data: JSON.stringify(data),
             keys: JSON.stringify(keys),
           });
-        
           return JSON.parse(execution.result);
     },
     verifyAnswers: async function(clientSideContractText, answers, PBKDF, username, userPublicKey){
@@ -35,5 +33,4 @@ const ReactNativeKeypairLib = {
         return userPublicKey === execution[username].keypair.public_key;
     }
 }
-
 export default ReactNativeKeypairLib;

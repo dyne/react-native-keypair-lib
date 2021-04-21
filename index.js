@@ -1,6 +1,6 @@
 // main index.js
 
-import {QUESTION_FOLDER, QUESTION_FILE_PREPEND} from "@env";
+import {QUESTION_FOLDER, QUESTION_FILE_PREPEND} from "react-native-dotenv";
 import * as RNFS from "react-native-fs";
 const DEFAULT_CLIENT_SIDE_CONTRACT = __dirname + "/zencode/Keypair-Creation-Client-Side.zen";
 const REGULAR_EXPRESSION = /\W/gi;

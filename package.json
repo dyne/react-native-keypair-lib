@@ -45,8 +45,6 @@
     "react-native": "^0.61.5"
   },
   "dependencies": {
-    "react-native-dotenv": "^2.5.5",
-    "react-native-fs": "^2.17.0",
     "zenroom": "^2.2.0-e4ecf22"
   }
 }

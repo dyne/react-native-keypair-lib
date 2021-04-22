@@ -5,16 +5,10 @@
   "description": "React Native Keypair Lib",
   "main": "index.js",
   "files": [
-    "README.md",
-    "android",
-    "index.js",
-    "react-native-keypair-lib.podspec",
-    "ios",
-    "zencode",
-    "props"
+    "lib/**/*"
   ],
   "scripts": {
-    "test": "jest --config jestconfig.json",
+    "test": "jest --passWithNoTests --config jestconfig.json",
     "format": "prettier --write \"src/**/*.ts\"",
     "lint": "tslint -p tsconfig.json",
     "prepare": "npm run build",

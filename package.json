@@ -1,7 +1,7 @@
 {
   "name": "react-native-keypair-lib",
   "title": "React Native Keypair Lib",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "React Native Keypair Lib",
   "main": "index.js",
   "files": [

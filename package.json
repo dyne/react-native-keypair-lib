@@ -3,7 +3,7 @@
   "title": "React Native Keypair Lib",
   "version": "1.0.5",
   "description": "React Native Keypair Lib",
-  "main": "index.js",
+  "main": "lib/index.js",
   "files": [
     "lib/**/*"
   ],

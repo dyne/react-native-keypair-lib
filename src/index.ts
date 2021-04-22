@@ -1,5 +1,1 @@
-export {
-  recoveryKeypair,
-  verifyAnswers,
-  sanitizeAnswers,
-} from "./clientSide";
+export { recoveryKeypair, verifyAnswers, sanitizeAnswers } from "./clientSide";

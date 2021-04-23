@@ -8,27 +8,101 @@
 
 `$ react-native link react-native-keypair-lib`
 
-## Usage
-```javascript
-import ReactNativeKeypairLib from 'react-native-keypair-lib';
 
-ReactNativeKeypairLib.getSafetyQuestions('en_GB');
+## Usage (Android)
+
+
+Make alterations to the following files:
+
+* `android/settings.gradle`
+
+```gradle
+...
+include ':react-native-keypair-lib'
+project(':react-native-keypair-lib').projectDir = new File(settingsDir, '../node_modules/react-native-keypair-lib/android')
 ```
 
-outcome:
+* `android/app/build.gradle`
 
-```json
-{
-    "question1":"Where my parents met?",
-    "question2":"What is the name of your first pet?",
-    "question3":"What is your home town?",
-    "question4":"What is the name of your first teacher?",
-    "question5":"What is the surname of your mother before wedding?"
+```gradle
+...
+dependencies {
+    ...
+    implementation project(':react-native-keypair-lib')
 }
-``` 
+```
+
+* register module (in MainActivity.java)
+
+  * For react-native below 0.19.0 (use `cat ./node_modules/react-native/package.json | grep version`)
+
+```java
+import com.reactlibrary.ReactNativeKeypairLibPackage;  // <--- import
+
+public class MainActivity extends Activity implements DefaultHardwareBackBtnHandler {
+
+  ......
+
+  @Override
+  protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    mReactRootView = new ReactRootView(this);
+
+    mReactInstanceManager = ReactInstanceManager.builder()
+      .setApplication(getApplication())
+      .setBundleAssetName("index.android.bundle")
+      .setJSMainModuleName("index.android")
+      .addPackage(new MainReactPackage())
+      .addPackage(new ReactNativeKeypairLibPackage())      // <------- add package
+      .setUseDeveloperSupport(BuildConfig.DEBUG)
+      .setInitialLifecycleState(LifecycleState.RESUMED)
+      .build();
+
+    mReactRootView.startReactApplication(mReactInstanceManager, "ExampleRN", null);
+
+    setContentView(mReactRootView);
+  }
+
+  ......
+
+}
+```
+
+  * For react-native 0.19.0 and higher
+```java
+import com.reactlibrary.ReactNativeKeypairLibPackage; // <------- add package
+
+public class MainActivity extends ReactActivity {
+   // ...
+    @Override
+    protected List<ReactPackage> getPackages() {
+      return Arrays.<ReactPackage>asList(
+        new MainReactPackage(), // <---- add comma
+        new ReactNativeKeypairLibPackage() // <---------- add package
+      );
+    }
+```
+
+  * For react-native 0.29.0 and higher ( in MainApplication.java )
+```java
+import com.reactlibrary.ReactNativeKeypairLibPackage; // <------- add package
+
+public class MainApplication extends Application implements ReactApplication {
+   // ...
+    @Override
+    protected List<ReactPackage> getPackages() {
+      return Arrays.<ReactPackage>asList(
+        new MainReactPackage(), // <---- add comma
+        new ReactNativeKeypairLibPackage() // <---------- add package
+      );
+    }
+```
+
+
+## Usage
 
 ```javascript
-import ReactNativeKeypairLib from 'react-native-keypair-lib';
+import { sanitizeAnswers } from 'react-native-keypair-lib';
 
 const answers = {
     question1: "L'Aquila",
@@ -38,7 +112,7 @@ const answers = {
     question5: "null",
 };
 
-ReactNativeKeypairLib.sanitizeAnswers(answers);
+sanitizeAnswers(answers);
 ```
 outcome:
 
@@ -53,7 +127,7 @@ outcome:
 ``` 
 
 ```javascript
-import ReactNativeKeypairLib from 'react-native-keypair-lib';
+import { recoveryKeypair } from 'react-native-keypair-lib';
 
 const answers = {
     question1: "Paris",
@@ -65,7 +139,7 @@ const answers = {
 const PBKDF = "qf3skXnPGFMrE28UJS7S8BdT8g==";
 const username = "user";
 
-const data = await ReactNativeKeypairLib.recoveryKeypair(answers, PBKDF, username);
+const data = await recoveryKeypair(contractClientSide, answers, PBKDF);
 ```
 outcome:
 
@@ -89,7 +163,7 @@ outcome:
 ``` 
 
 ```ts
-import ReactNativeKeypairLib from 'react-native-keypair-lib';
+import {verifyAnswers } from 'react-native-keypair-lib';
 
 const answers = {
     question1: "Paris",
@@ -103,7 +177,7 @@ const publicKey =
     "BDYfET6GOWSTizMYIRfcthw2MKksTpg+f8LR0ndq6fRxOLfhT7d1IjvwkvV0LzlzHuGat8SF9unNwhA3alpQ8So=";
 const username = "user";
 
-const data = await ReactNativeKeypairLib.verifyAnswers(answers, PBKDF, username, publicKey);
+const data = await verifyAnswers(contractClientSide, answers, PBKDF, publicKey);
 ```
 outcome:
 

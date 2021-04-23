@@ -3,9 +3,13 @@
   "title": "React Native Keypair Lib",
   "version": "1.0.6",
   "description": "React Native Keypair Lib",
-  "main": "lib/index.js",
+  "main": "index.js",
   "files": [
-    "lib/**/*"
+    "android",
+    "ios",
+    "README.md",
+    "*.js",
+    "*.ts"
   ],
   "scripts": {
     "test": "jest --passWithNoTests --config jestconfig.json",
@@ -17,8 +21,8 @@
     "version": "npm run format && git add -A src",
     "postversion": "git push && git push --tags",
     "build": "npm run clean && tsc && npm run copy-files",
-    "clean": "rm -rf ./lib",
-    "copy-files": "cp -r ./android/ ./lib/android && cp -r ./ios/ ./lib/ios"
+    "clean": "rm -f *.ts & rm -f *.js",
+    "copy-files": ""
   },
   "repository": {
     "type": "git",

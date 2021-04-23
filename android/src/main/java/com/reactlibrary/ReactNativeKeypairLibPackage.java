@@ -11,14 +11,14 @@ import com.facebook.react.bridge.NativeModule;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.uimanager.ViewManager;
 
-import decode.zenroom.ZenroomPackage;
+import decode.zenroom.ZenroomModule;
 
 public class ReactNativeKeypairLibPackage implements ReactPackage {
     @Override
     public List<NativeModule> createNativeModules(ReactApplicationContext reactContext) {
         return Arrays.<NativeModule>asList(
             new ReactNativeKeypairLibModule(reactContext),
-            new ZenroomPackage());
+            new ZenroomModule(reactContext));
     }
 
     @Override

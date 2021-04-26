@@ -6,20 +6,20 @@
 	objectVersion = 46;
 	objects = {
 
-/* Begin PBXCopyFilesBuildPhase section */
-		58B511D91A9E6C8500147676 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "include/$(PRODUCT_NAME)";
-			dstSubfolderSpec = 16;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
+/* Begin PBXBuildFile section */
+		8DE2F5E0230C5F57003658B2 /* Zenroom.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DE2F5DE230C5F56003658B2 /* Zenroom.m */; };
+		8DE8252D23326A2C0075F036 /* zenroom-ios-x86_64.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DE8252A23326A2B0075F036 /* zenroom-ios-x86_64.a */; };
+		8DE8252E23326A2C0075F036 /* zenroom-ios-arm64.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DE8252B23326A2C0075F036 /* zenroom-ios-arm64.a */; };
+		8DE8252F23326A2C0075F036 /* zenroom-ios-armv7.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DE8252C23326A2C0075F036 /* zenroom-ios-armv7.a */; };
+/* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		134814201AA4EA6300B7C361 /* libReactNativeKeypairLib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libReactNativeKeypairLib.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		8DE2F5DB230C5F56003658B2 /* Zenroom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Zenroom.h; sourceTree = "<group>"; };
+		8DE2F5DD230C5F56003658B2 /* zenroomInternal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zenroomInternal.h; sourceTree = "<group>"; };
+		8DE2F5DE230C5F56003658B2 /* Zenroom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Zenroom.m; sourceTree = "<group>"; };
+		8DE8252A23326A2B0075F036 /* zenroom-ios-x86_64.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "zenroom-ios-x86_64.a"; sourceTree = "<group>"; };
+		8DE8252B23326A2C0075F036 /* zenroom-ios-arm64.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "zenroom-ios-arm64.a"; sourceTree = "<group>"; };
+		8DE8252C23326A2C0075F036 /* zenroom-ios-armv7.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "zenroom-ios-armv7.a"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,24 +27,24 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8DE8252D23326A2C0075F036 /* zenroom-ios-x86_64.a in Frameworks */,
+				8DE8252E23326A2C0075F036 /* zenroom-ios-arm64.a in Frameworks */,
+				8DE8252F23326A2C0075F036 /* zenroom-ios-armv7.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		134814211AA4EA7D00B7C361 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				134814201AA4EA6300B7C361 /* libReactNativeKeypairLib.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		58B511D21A9E6C8500147676 = {
 			isa = PBXGroup;
 			children = (
-				134814211AA4EA7D00B7C361 /* Products */,
+				8DE8252B23326A2C0075F036 /* zenroom-ios-arm64.a */,
+				8DE8252C23326A2C0075F036 /* zenroom-ios-armv7.a */,
+				8DE8252A23326A2B0075F036 /* zenroom-ios-x86_64.a */,
+				8DE2F5DB230C5F56003658B2 /* Zenroom.h */,
+				8DE2F5DE230C5F56003658B2 /* Zenroom.m */,
+				8DE2F5DD230C5F56003658B2 /* zenroomInternal.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -65,7 +65,7 @@
 			);
 			name = ReactNativeKeypairLib;
 			productName = RCTDataManager;
-			productReference = 134814201AA4EA6300B7C361 /* libReactNativeKeypairLib.a */;
+			productReference = 58B511DA1A9E6C8500147676 /* libReactNativeKeypairLib.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -105,6 +105,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8DE2F5E0230C5F57003658B2 /* Zenroom.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

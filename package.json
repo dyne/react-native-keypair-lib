@@ -9,7 +9,8 @@
     "ios",
     "README.md",
     "*.js",
-    "*.ts"
+    "*.ts",
+    "*.podspec"
   ],
   "scripts": {
     "test": "jest --passWithNoTests --config jestconfig.json",
